@@ -44,6 +44,7 @@ function fetchData(api)
 {
     infoTxt.innerHTML = "Getting weather details...";
     infoTxt.classList.add("pending");
+    console.log(api);
     fetch(api).then(response => response.json()).then(result => weatherDetail(result));
 }
 
@@ -60,10 +61,10 @@ function weatherDetail(info){
         const {description , id} = info.weather[0];
         const {feels_like , humidity , temp} = info.main;
 
-        wrapper.querySelector(".temp .numb").innerText = temp;
+        wrapper.querySelector(".temp .numb").innerText = Math.floor(temp);
         wrapper.querySelector(".weather").innerText = description;
         wrapper.querySelector(".location span").innerText = `${city},${country}`;
-        wrapper.querySelector(".temp .numb-2").innerText = feels_like;
+        wrapper.querySelector(".temp .numb-2").innerText = Math.floor(feels_like);
         wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
 
         if(id == 800){
