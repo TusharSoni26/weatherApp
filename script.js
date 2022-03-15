@@ -68,22 +68,22 @@ function weatherDetail(info){
         wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
 
         if(id == 800){
-            weatherIcon.src = "/weather-icons/clear.svg";
+            weatherIcon.src = "weather-icons/clear.svg";
         }
         else if(id >= 200 && id<=232){
-            weatherIcon.src = "/weather-icons/strom.svg";
+            weatherIcon.src = "weather-icons/strom.svg";
         }
         else if(id >= 600 && id<=622){
-            weatherIcon.src = "/weather-icons/snow.svg";
+            weatherIcon.src = "weather-icons/snow.svg";
         }
         else if(id >= 701 && id<=781){
-            weatherIcon.src = "/weather-icons/haze.svg";
+            weatherIcon.src = "weather-icons/haze.svg";
         }
         else if(id >= 801 && id<=804){
-            weatherIcon.src = "/weather-icons/cloud.svg";
+            weatherIcon.src = "weather-icons/cloud.svg";
         }
         else if((id >= 301 && id<=321) || (id>=500 && id<= 531)){
-            weatherIcon.src = "/weather-icons/rain.svg";
+            weatherIcon.src = "weather-icons/rain.svg";
         } 
 
         infoTxt.classList.replace("error","pending");
